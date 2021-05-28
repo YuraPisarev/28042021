@@ -13,12 +13,13 @@
             <label for="username">Name</label>
             <input type="text" name="uaername" id="username">
         </div>
+        <div>
             <label>Gender</label>
             <input type="redio" name="gender" value="male" id="gender-male">
             <label for="gender-male">Male</label>
             <input type="redio" name="gender" value="female" id="gender-female">
             <label for="gender-female">Female</label>
-        <div>
+        </div>
 
         <div>
         <label>Programming language </label>
@@ -30,7 +31,7 @@
             </optgroup>
             <optgroup label="Frontend">
                 <option value="javascript">JavaScript</option>
-                <option value="python">Python</option>
+                <option value="html">HTML</option>
                 <option value="css">CSS</option>
             </optgroup>
         </div>
