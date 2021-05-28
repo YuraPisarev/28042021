@@ -35,3 +35,12 @@ function sum($message, ...$numbers)
 }
 
 sum('Tada',1, 3, 4, 6, 7, 8);
+
+function oldSum(string $messege)
+{
+    var_dump(func_num_args(), func_get_args());
+}
+
+oldSum('Tada',1, 3, 4, 6, 7, 8);
+
+
