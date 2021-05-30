@@ -6,7 +6,7 @@ while ($line = fgetc($file)) {
     echo $line, '<br>';
 }
 
-fclose($file)
+fclose($file);
 
 $data = [1, 2, 5, 7, 9];
 

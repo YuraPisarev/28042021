@@ -76,4 +76,4 @@ function fibonacci(int $n)
     return $storage[$n];
 }
 $f = fibonacci(200);
-var_dump($f);
+var_dump($f, $count);
