@@ -1,10 +1,22 @@
 <?php
 
+
+
+$action = isset($commentData, $_GET['id'])
+    ? 'update.php?id='
+    : 'comment-processor.php';
+
+
 require __DIR__ . '/header.php';
+?>
 
-$comments = require __DIR__ . '/comments-list.php';
+<main class="container">
+    <div class="bg-light p-5 rounded">
+        <?php require __DIR__ . '/omment-form.php'?>
+    </div>
+</main>
 
-$file = __DIR__ . '/storage/' . $_GET['id'];
-if (!file_exists($file)) {
-    header('Locatoin: error.php?message=Comment is not exists');
-}
+<?php
+require __DIR__ . '/footer.php';
+
+?>

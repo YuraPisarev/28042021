@@ -11,61 +11,12 @@ $comments = require __DIR__ . '/comments-list.php';
 
 <main class="container">
     <div class="bg-light p-5 rounded">
-        <form action="comment-processor.php" method="POST">
-            <div class="mb-3">
-                <label for="username" class="form-label">Name</label>
-                <input type="text"
-                       name="username"
-                       value="<?= $commentData['username']?? ''?>"
-                       id="username"
-                       class="form-control">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Gender</label>
-                <?= foreach ($genders as $id => $label): ?>
-                <div class="form-check">
-                    <input type="radio"
-                           name="gender"
-                           value="<?= $id ?>"
-                           <?= (isset($commentData['gender']) && $commentData['gender'] === $id) ? 'checked' : '' ?>
-                           id="gender-male"
-                           class="form-check-input">
-                    <label for="gender-male" class="form-check-label">Male</label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" name="gender" value="female" id="gender-female" class="form-check-input">
-                    <label for="gender-female" class="form-check-label">Female</label>
-                </div>
-            </div>
-
-            <div class="mb-3">
-                <label for="programming_language" class="form-label">Programming language</label>
-                <select name="programming_language" id="programming_language" class="form-control">
-                    <optgroup label="Backend">
-                        <option value="php">PHP</option>
-                        <option value="python">Python</option>
-                        <option value="java">Java</option>
-                    </optgroup>
-                    <optgroup label="Frontend">
-                        <option value="js">JavaScript</option>
-                        <option value="html">HTML</option>
-                        <option value="css">CSS</option>
-                    </optgroup>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label for="comment" class="form-label">Comment</label>
-                <textarea name="comment" id="comment" class="form-control"></textarea>
-
-            </div>
-            <button type="submit" class="btn btn-success">Send</button>
-
-        </form>
+        <?php require __DIR__ . '/omment-form.php'?>
     </div>
 
+    <table class="table table-dark table-hover">
 
-    <?php foreach ($comments as $date => $comment): ?>
+        <?php foreach ($comments as $date => $comment): ?>
            <tr>
                <td>
                    <div class="alert alert-warning" role="alert">
@@ -74,7 +25,7 @@ $comments = require __DIR__ . '/comments-list.php';
                </td>
            </tr>
 
-    <table class="table table-dark table-hover">
+
         <?php foreach ($comment as $file => $comment1): ?>
             <tr>
                 <td>

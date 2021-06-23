@@ -5,9 +5,6 @@ if (!file_exists($file)) {
     header('Location: error.php?message=Comment is not exists');
     exit;
 }
-$data = $_POST;
-$data['']
-$comment = serialize($_POST);
-file_put_contents($file, $comment);
+unlink($file);
 
 header('Location: form2.php');
