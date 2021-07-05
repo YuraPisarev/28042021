@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../helps/respons.php';
+require_once __DIR__ . '/../helps/response.php';
 
 $dirName = $_POST['dir_name'] ?? null;
 if (!$dirName) {
