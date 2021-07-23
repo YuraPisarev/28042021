@@ -1,5 +1,5 @@
 <?php
-//var_dump($_SERVER['REQUEST_URI']);
+
 
 function load(string $url)
 {
@@ -11,9 +11,12 @@ function load(string $url)
 
     $part = getUrlParst($url);
 
-    require_once getControllerFile($part);
 
-    getActionFunction($part)();
+    $controllerName = array_shift($part);
+    require_once getControllerFile($controllerName);
+
+    $actionName = array_shift($part);
+    getActionFunction($actionName)();
 
 }
 
@@ -29,9 +32,9 @@ function cleanUrl(string $url): string
     return preg_replace('/\\?.*/','' ,$url);
 }
 
-function getControllerFile(array &$part): string
+function getControllerFile(string $controllerName): string
 {
-    $controllerName = array_shift($part);
+
     $controllerName = camelize($controllerName);
     $controllerName = "{$controllerName}Controller.php";
     $controllerFile = config('controllersRout') . '/' . $controllerName;
@@ -43,10 +46,10 @@ function getControllerFile(array &$part): string
     return $controllerFile;
 }
 
-function getActionFunction(array &$part): string
+function getActionFunction(string $actionName): string
 {
 
-    $actionName = array_shift($part);
+
     $actionName = camelize($actionName);
     $actionFunction = "action{$actionName}";
 

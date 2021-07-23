@@ -14,8 +14,9 @@ services:
       - 2804:80
     volumes:
       - ./:/var/www
-      - ./docker/nginx/skillup.local.conf:/etc/nginx/conf.d/skillup.local.conf+
-      - ./docker/nginx/contact.local.conf:/etc/nginx/conf.d/skillup.local.conf
+      - ./docker/nginx/skillup.local.conf:/etc/nginx/conf.d/skillup.local.conf
+      - ./docker/nginx/contact.local.conf:/etc/nginx/conf.d/contact.local.conf
+      - ./docker/nginx/chat.local.conf:/etc/nginx/conf.d/chat.local.conf
     depends_on:
       - app
   db:

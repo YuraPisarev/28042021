@@ -1,17 +1,19 @@
 <?php
 
 
-
-function config(string $key, mixed $default = null) : mixed
+function config(string $key, mixed $default = null): mixed
 {
     $dir = dirname(__DIR__);
     $config = [
         'controllersRout' => "{$dir}/controllers",
-        'viewRout' => "{$dir}/views",
-        'LayoutsRout' => "{$dir}/views/layouts",
-        'ExistedVariablesPrefix' => 'skillup',
+        'viewsRout' => "{$dir}/views",
+        'layoutsRout' => "{$dir}/views/layouts",
+        'existedVariablePrefix' => 'skillup',
+        'defaultController' => 'index',
+        'defaultAction' => 'index',
         'loginUrl' => '/guest/login',
-        'guestAction' => [
+        'modelsDir' => "{$dir}/models",
+        'guestActions' => [
             '/guest/login',
             '/guest/registration',
         ],
@@ -21,7 +23,8 @@ function config(string $key, mixed $default = null) : mixed
             'password' => 'skillup_pwd',
             'db_name' => 'skillup_db',
         ],
+        'recordsOnPage' => 50
     ];
 
-    return $config[$key] ?? $default ;
+    return $config[$key] ?? $default;
 }
