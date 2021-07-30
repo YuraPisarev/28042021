@@ -4,7 +4,7 @@ namespace cli\controllers;
 
 use components\AbstractController;
 
-class AlertController extends AbstractController
+class ChatController extends AbstractController
 {
     public function actionRaw()
     {
